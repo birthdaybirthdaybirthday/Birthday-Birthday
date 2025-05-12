@@ -169,7 +169,7 @@ $('document').ready(function(){
 		
 		// Calculate positions based on viewport percentage
 		var balloonTop = vh * 0.3;  // 40% from top
-		var spacing = vw * 0.075;     // 10% of viewport width for spacing
+		var spacing = vw * 0.01;     // 10% of viewport width for spacing
 		
 		// Center point for balloon arrangement
 		var centerX = vw / 2;
