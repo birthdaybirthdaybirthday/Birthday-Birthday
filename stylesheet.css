@@ -1308,3 +1308,25 @@ audio {
     		-webkit-transform: scale(0.9);
     	}
     }*/
+	@media only screen and (max-width: 768px) {
+    .balloons {
+        width: 70px;  /* Reduce balloon width for smaller screens */
+        height: 130px;  /* Proportionally reduce height */
+        background-size: 70px 130px;  /* Adjust background size */
+        bottom: -150px;  /* Bring balloons closer to the bottom */
+    }
+
+    .balloons h2 {
+        font-size: 30px;  /* Reduce text size */
+    }
+
+
+}
+html, body {
+    max-width: 100%;
+    overflow-x: hidden !important;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+}

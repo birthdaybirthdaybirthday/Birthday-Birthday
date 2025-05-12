@@ -3,18 +3,32 @@ $(window).load(function(){
 	$('.container').fadeIn('fast');
 });
 $('document').ready(function(){
-		var vw;
-		$(window).resize(function(){
-			 vw = $(window).width()/2;
-			$('#b1,#b2,#b3,#b4,#b5,#b6,#b7').stop();
-			$('#b11').animate({top:240, left: vw-350},500);
-			$('#b22').animate({top:240, left: vw-250},500);
-			$('#b33').animate({top:240, left: vw-150},500);
-			$('#b44').animate({top:240, left: vw-50},500);
-			$('#b55').animate({top:240, left: vw+50},500);
-			$('#b66').animate({top:240, left: vw+150},500);
-			$('#b77').animate({top:240, left: vw+250},500);
-		});
+	var vw, vh;
+	
+	function positionBalloons() {
+		vw = $(window).width();
+		vh = $(window).height();
+		
+		// Calculate positions based on viewport percentage
+		var balloonTop = vh * 0.3;  // 40% from top
+		var spacing = vw * 0.1;     // 10% of viewport width for spacing
+		
+		// Center point for balloon arrangement
+		var centerX = vw / 2;
+		
+		// Balloon positioning with responsive calculations
+		$('#b11').animate({top: balloonTop, left: centerX - (3.5 * spacing)}, 500);
+		$('#b22').animate({top: balloonTop, left: centerX - (2.5 * spacing)}, 500);
+		$('#b33').animate({top: balloonTop, left: centerX - (1.5 * spacing)}, 500);
+		$('#b44').animate({top: balloonTop, left: centerX - (0.5 * spacing)}, 500);
+		$('#b55').animate({top: balloonTop, left: centerX + (0.5 * spacing)}, 500);
+		$('#b66').animate({top: balloonTop, left: centerX + (1.5 * spacing)}, 500);
+		$('#b77').animate({top: balloonTop, left: centerX + (2.5 * spacing)}, 500);
+	}
+	
+	// Call on resize and initial load
+	$(window).resize(positionBalloons);
+	positionBalloons();
 
 	$('#turn_on').click(function(){
 		$('#bulb_yellow').addClass('bulb-glow-yellow');
