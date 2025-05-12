@@ -11,19 +11,19 @@ $('document').ready(function(){
 		
 		// Calculate positions based on viewport percentage
 		var balloonTop = vh * 0.3;  // 40% from top
-		var spacing = vw * 0.01;     // 10% of viewport width for spacing
+		var spacing = vw * 0.0001;     // 10% of viewport width for spacing
 		
 		// Center point for balloon arrangement
 		var centerX = vw / 2;
 		
 		// Balloon positioning with responsive calculations
-		$('#b11').animate({top: balloonTop, left: centerX - (3.5 * spacing)}, 500);
-$('#b22').animate({top: balloonTop, left: centerX - (1.5 * spacing)}, 500);
-$('#b33').animate({top: balloonTop, left: centerX - (0.9 * spacing)}, 500);
-$('#b44').animate({top: balloonTop, left: centerX - (0.3 * spacing)}, 500);
-$('#b55').animate({top: balloonTop, left: centerX + (0.3 * spacing)}, 500);
-$('#b66').animate({top: balloonTop, left: centerX + (0.9 * spacing)}, 500);
-		$('#b77').animate({top: balloonTop, left: centerX + (2.5 * spacing)}, 500);
+
+		$('#b22').animate({top: balloonTop, left: centerX - (1.5 * spacing)}, 500);
+		$('#b33').animate({top: balloonTop, left: centerX - (0.9 * spacing)}, 500);
+		$('#b44').animate({top: balloonTop, left: centerX - (0.3 * spacing)}, 500);
+		$('#b55').animate({top: balloonTop, left: centerX + (0.3 * spacing)}, 500);
+		$('#b66').animate({top: balloonTop, left: centerX + (0.9 * spacing)}, 500);
+	
 	}
 	
 	// Call on resize and initial load
@@ -164,13 +164,23 @@ $('#b66').animate({top: balloonTop, left: centerX + (0.9 * spacing)}, 500);
 		$('#b5').attr('id','b55')
 		$('#b6').attr('id','b66')
 		$('#b7').attr('id','b77')
-		$('#b11').animate({top:240, left: vw-350},500);
-		$('#b22').animate({top:240, left: vw-250},500);
-		$('#b33').animate({top:240, left: vw-150},500);
-		$('#b44').animate({top:240, left: vw-50},500);
-		$('#b55').animate({top:240, left: vw+50},500);
-		$('#b66').animate({top:240, left: vw+150},500);
-		$('#b77').animate({top:240, left: vw+250},500);
+		vw = $(window).width();
+		vh = $(window).height();
+		
+		// Calculate positions based on viewport percentage
+		var balloonTop = vh * 0.3;  // 40% from top
+		var spacing = vw * 0.075;     // 10% of viewport width for spacing
+		
+		// Center point for balloon arrangement
+		var centerX = vw / 2;
+		
+		// Balloon positioning with responsive calculations
+
+		$('#b22').animate({top: balloonTop, left: centerX - (1.5 * spacing)}, 500);
+		$('#b33').animate({top: balloonTop, left: centerX - (0.9 * spacing)}, 500);
+		$('#b44').animate({top: balloonTop, left: centerX - (0.3 * spacing)}, 500);
+		$('#b55').animate({top: balloonTop, left: centerX + (0.3 * spacing)}, 500);
+		$('#b66').animate({top: balloonTop, left: centerX + (0.9 * spacing)}, 500);
 		$('.balloons').css('opacity','0.9');
 		$('.balloons h2').fadeIn(3000);
 		$(this).fadeOut('slow').delay(3000).promise().done(function(){
