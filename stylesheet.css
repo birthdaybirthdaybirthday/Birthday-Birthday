@@ -1322,11 +1322,3 @@ audio {
 
 
 }
-html, body {
-    max-width: 100%;
-    overflow-x: hidden !important;
-    position: relative;
-    margin: 0;
-    padding: 0;
-    width: 100vw;
-}
